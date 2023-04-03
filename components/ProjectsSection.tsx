@@ -24,7 +24,26 @@ const ProjectsSection = () => {
           return (
             <div key={idx} className='last:mb-[60px]'>
               <SlideUp offset='-300px 0px -300px 0px'>
-                <div className='flex flex-col  animate-slideUpCubiBezier animation-delay-2 md:flex-row md:space-x-12'>
+                <div className='flex flex-col  animate-slideUpCubiBezier animation-delay-2 md:flex-row md:gap-16'>
+                  <div className='block md:hidden'>
+                    <div className='flex justify-between items-center mb-6'>
+                      <h1 className='text-4xl font-bold '>{project.name}</h1>
+                      <div className='flex flex-row items-center space-x-4'>
+                        <Link href={project.github} target='_blank'>
+                          <BsGithub
+                            size={20}
+                            className='hover:-translate-y-1 transition-transform cursor-pointer'
+                          />
+                        </Link>
+                        <Link href={project.link} target='_blank'>
+                          <BsArrowUpRightSquare
+                            size={20}
+                            className='hover:-translate-y-1 transition-transform cursor-pointer'
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
                   <div className=' md:w-1/2'>
                     {project.link ? (
                       <Link href={project?.link} target='_blank'>
@@ -33,7 +52,7 @@ const ProjectsSection = () => {
                           alt=''
                           width={1000}
                           height={1000}
-                          className='h-[264px] width-full object-cover object-left object-top rounded-xl shadow-xl hover:opacity-70'
+                          className='h-[264px] width-full object-cover object-top object-left  rounded-xl shadow-xl hover:opacity-70'
                         />
                       </Link>
                     ) : (
@@ -42,40 +61,44 @@ const ProjectsSection = () => {
                         alt=''
                         width={1000}
                         height={1000}
-                        className='rounded-xl shadow-xl hover:opacity-70'
+                        className='h-[264px] width-full object-cover object-left object-top rounded-xl shadow-xl hover:opacity-70'
                       />
                     )}
                   </div>
                   <div className='md:w-1/2 md:mt-0 mt-6 flex flex-col justify-center'>
-                    <h1 className='text-4xl font-bold mb-6'>{project.name}</h1>
+                    <div className='hidden md:block'>
+                      <div className='flex justify-between items-center mb-6'>
+                        <h1 className='text-4xl font-bold '>{project.name}</h1>
+                        <div className='flex flex-row items-center space-x-4'>
+                          <Link href={project.github} target='_blank'>
+                            <BsGithub
+                              size={20}
+                              className='hover:-translate-y-1 transition-transform cursor-pointer'
+                            />
+                          </Link>
+                          <Link href={project.link} target='_blank'>
+                            <BsArrowUpRightSquare
+                              size={20}
+                              className='hover:-translate-y-1 transition-transform cursor-pointer'
+                            />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
                     <p className='text-xl leading-7 mb-4 text-neutral-600 dark:text-neutral-400'>
                       {project.description}
                     </p>
-                    <div className='flex flex-row overflow-scroll items-center align-bottom space-x-4 mb-4'>
+                    <div className='flex flex-row overflow-scroll  align-bottom space-x-4 mb-4'>
                       {project.stack.map((item, idx) => {
                         return (
-                          <p
+                          <div
                             key={idx}
-                            className='text-xs  font-semibold bg-gray-200 px-3 py-1 text-gray-500 rounded '
+                            className='flex justify-center items-center bg-gray-200 px-3 py-1 text-gray-500 rounded'
                           >
-                            {item}
-                          </p>
+                            <p className='text-xs font-semibold'>{item}</p>
+                          </div>
                         );
                       })}
-                    </div>
-                    <div className='flex flex-row overflow-scroll items-center align-bottom space-x-4'>
-                      <Link href={project.github} target='_blank'>
-                        <BsGithub
-                          size={30}
-                          className='hover:-translate-y-1 transition-transform cursor-pointer'
-                        />
-                      </Link>
-                      <Link href={project.link} target='_blank'>
-                        <BsArrowUpRightSquare
-                          size={30}
-                          className='hover:-translate-y-1 transition-transform cursor-pointer'
-                        />
-                      </Link>
                     </div>
                   </div>
                 </div>
