@@ -91,10 +91,11 @@ const ProjectsSection = () => {
                     <div className='flex flex-row overflow-scroll  align-bottom space-x-4 mb-4'>
                       {project.stack.map((item, idx) => {
                         return (
-                          <div className='flex justify-center items-center bg-gray-200 px-3 py-1 text-gray-500 rounded'>
-                            <p key={idx} className='text-xs font-semibold'>
-                              {item}
-                            </p>
+                          <div
+                            key={idx}
+                            className='flex justify-center items-center bg-gray-200 px-3 py-1 text-gray-500 rounded'
+                          >
+                            <p className='text-xs font-semibold'>{item}</p>
                           </div>
                         );
                       })}
