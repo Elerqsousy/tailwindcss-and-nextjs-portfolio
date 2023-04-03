@@ -47,7 +47,7 @@ const AboutSection = () => {
               Hi, my name is Rizk and I am a{' '}
               <span className='font-bold'>highly ambitious</span>,
               <span className='font-bold'> self-motivated</span>, and
-              <span className='font-bold'> driven</span> Front-End Developer based
+              <span className='font-bold'> driven</span> software engineer based
               in Egypt.
             </p>
             <br />
